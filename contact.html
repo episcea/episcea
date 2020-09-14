@@ -74,7 +74,7 @@
           </div>
         </div>
         <div class="col-md-8">
-          <form action="" class="main-form needs-validation" novalidate>
+          <form action="https://formspree.io/mzbkpeqb" method="POST" class="main-form needs-validation" novalidate>
             <div class="card p-4">
               <div class="card-body">
                 <h3 class="text-center">Veuillez remplir ce formulaire pour nous contacter</h3>
@@ -82,34 +82,34 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Prénom" required>
+                      <input type="text" name="prénom" class="form-control" placeholder="Prénom" required>
                       <div class="invalid-feedback">Veuillez entrez votre prénom</div>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Nom" required>
+                      <input type="text" name="nom" class="form-control" placeholder="Nom" required>
                       <div class="invalid-feedback">Veuillez entrez votre nom</div>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <input type="email" class="form-control" placeholder="Email" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
+                      <input type="email" name="email" class="form-control" placeholder="Email" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
                       <small class="form-text text-muted">Nous ne partagerons pas votre email.</small>
                       <div class="invalid-feedback">Veuillez entrez un email valide.</div>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <input type="tel" class="form-control" placeholder="Numéro de Téléphone">
-                      
+                      <input type="tel" name="téléphone" class="form-control" placeholder="Numéro de Téléphone">
+                      <small class="form-text text-muted">Le numéro de téléphone n'est pas obligatoire.</small>
                     </div>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
-                      <textarea class="form-control" placeholder="Message" required></textarea>
+                      <textarea class="form-control" name="message" placeholder="Message" required></textarea>
                       <div class="invalid-feedback">Veuillez entrez votre message</div>
                     </div>
                   </div>
@@ -155,10 +155,11 @@
 
     //Validation of the form
     var form = document.querySelector('.needs-validation');
+    
     form.addEventListener('click', function(event) {
       if (form.checkValidity() === false) {
-        event.preventDefault;
-        event.stopPropagation;
+        event.preventDefault();
+        event.stopPropagation();
       }
       form.classList.add('was-validated');
       
