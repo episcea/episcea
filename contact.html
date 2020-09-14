@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
     crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
+
   <title>Bootstrap Theme</title>
 </head>
 
@@ -73,46 +74,54 @@
           </div>
         </div>
         <div class="col-md-8">
-          <div class="card p-4">
-            <div class="card-body">
-              <h3 class="text-center">Veuillez remplir ce formulaire pour nous contacter</h3>
-              <hr>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Prénom">
+          <form action="" class="main-form needs-validation" novalidate>
+            <div class="card p-4">
+              <div class="card-body">
+                <h3 class="text-center">Veuillez remplir ce formulaire pour nous contacter</h3>
+                <hr>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Prénom" required>
+                      <div class="invalid-feedback">Veuillez entrez votre prénom</div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Nom" required>
+                      <div class="invalid-feedback">Veuillez entrez votre nom</div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="email" class="form-control" placeholder="Email" required pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$">
+                      <small class="form-text text-muted">Nous ne partagerons pas votre email.</small>
+                      <div class="invalid-feedback">Veuillez entrez un email valide.</div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="tel" class="form-control" placeholder="Numéro de Téléphone">
+                      
+                    </div>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Nom">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <textarea class="form-control" placeholder="Message" required></textarea>
+                      <div class="invalid-feedback">Veuillez entrez votre message</div>
+                    </div>
                   </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Email">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Numéro de Téléphone">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <textarea class="form-control" placeholder="Message"></textarea>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <input type="submit" value="Envoyer" class="btn btn-outline-info btn-block">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-outline-info btn-block submit">Envoyez</button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
@@ -144,6 +153,16 @@
     // Get the current year for the copyright
     $('#year').text(new Date().getFullYear());
 
+    //Validation of the form
+    var form = document.querySelector('.needs-validation');
+    form.addEventListener('click', function(event) {
+      if (form.checkValidity() === false) {
+        event.preventDefault;
+        event.stopPropagation;
+      }
+      form.classList.add('was-validated');
+      
+    })
   </script>
 </body>
 
