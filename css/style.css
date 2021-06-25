@@ -28,6 +28,12 @@ body {
   background: url('../img/team-4529717_1920.jpg');
   background-size: cover;
 }
+.recalcitrant {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  
+}
 
 #home-heading {
   position: relative;
