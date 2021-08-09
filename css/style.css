@@ -1,5 +1,6 @@
 body {
   overflow-x: hidden;
+  
 }
 
 .navbar .nav-link {
@@ -28,10 +29,8 @@ body {
   background: url('../img/team-4529717_1920.jpg');
   background-size: cover;
 }
-.recalcitrant {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+.margin-top {
+  margin-top: 180px !important;
   
 }
 
